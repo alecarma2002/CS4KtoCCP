@@ -13,8 +13,9 @@
     "resizable": false,
     "icon":"src/img/app_icon.png"
   },
-
+  
   "scripts": {
-    "start": "CS4KtoCCP.exe ."
+    "start": "CS4KtoCCP.exe ." 
   }
 }
+

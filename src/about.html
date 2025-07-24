@@ -1,16 +1,135 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>About thiS app</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div>
-        about this app
-    </div>
-    
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CS4KtoCCP - README</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    pre {
+      background: #eee;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .github-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
 
-    
-  </body>
+  <h1>CS4KtoCCP <small>V1.0.0</small></h1>
+
+  <p><strong>CS4KtoCCP</strong> is a desktop utility application that converts <strong>CS4000 configuration</strong> into <strong>CCP-compatible configuration files</strong>.</p>
+  <p>The converter will export only the global informations (ship name, IMO, SG number, etc.) and the loops, creating one <code>LMX</code> module for each loop inside the CS4000 configuration containing the loop units.</p>
+  <p>The application is packaged using <strong>Node Webkit (NW.js)</strong> to provide a cross-platform GUI experience with the flexibility of Node.js and web technologies.</p>
+
+  <div class="section">
+    <h2>🛠️ Features</h2>
+    <ul>
+      <li>🧠 Parses <code>.c4d</code> XML configuration files from CS4000 systems</li>
+      <li>🔁 Converts and maps them into the CCP format</li>
+      <li>⚙️ Lightweight and portable via Node Webkit</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>💻 CodeBase</h2>
+    <p>You can find the open source code in this GitHub repository:</p>
+    <p class="github-link" >🐙 <a href="https://github.com/alecarma2002/CS4KtoCCP" id="externalLink">https://github.com/alecarma2002/CS4KtoCCP</a></p>
+  </div>
+
+  <div class="section">
+    <h2>📦 Installation for Developers</h2>
+
+    <p>Clone the repository:</p>
+    <pre><code>git clone https://github.com/alecarma2002/CS4KtoCCP.git
+cd CS4KtoCCP</code></pre>
+
+    <p>Install dependencies:</p>
+    <ul>
+      <li>Install Node Webkit (nw.js)</li>
+      <li>Replace the standard <code>/src</code> folder, <code>package-lock.json</code>, and <code>package.json</code> with the ones from the repository</li>
+      <li>Change the <code>start</code> script in <code>package.json</code> to the path of <code>nw.exe</code></li>
+    </ul>
+
+    <pre><code>npm install</code></pre>
+
+    <p>Run in development:</p>
+    <pre><code>npm start</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>📦 Installation for Users</h2>
+    <p>Use the installer and follow the installation process.</p>
+  </div>
+
+  <div class="section">
+    <h2>🚀 Usage</h2>
+    <ul>
+      <li>Launch the app</li>
+      <li>Use the interface to select a <code>.c4d</code> configuration file</li>
+      <li>Choose between converting loop units to Excel or to CCP configuration</li>
+      <li>Choose the configTool version</li>
+      <li>The converted configuration will be generated and saved in the specified location</li>
+    </ul>
+    <p><strong>Note:</strong> The configuration must be opened with the official ConfigTool and saved before installing it into a live system.</p>
+  </div>
+
+  <div class="section">
+    <h2>⚠️ Disclaimer</h2>
+    <p>I do not take responsibility for any data loss, misconfiguration, or issues that may arise from using this software. Use it at your own risk.</p>
+    <p>This application without the official ConfigTool from Consilium is useless since the obtained configuration is rejected from a CCP system if not saved from the ConfigTool.</p>
+  </div>
+
+  <div class="section">
+    <h2>📄 License</h2>
+    <p><strong>The MIT License (MIT)</strong><br>
+    Copyright © 2025 Carmagnini Alessandro</p>
+
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+    <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+  </div>
+
+  <script>
+    const shell = nw.Shell;
+
+      document.getElementById('externalLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        shell.openExternal(this.href);
+      });
+  </script>
+
+</body>
 </html>
