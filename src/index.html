@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS4KtoCCP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <div id="splash">
+        <img src="img\icon.png" alt="Logo" id="splash-logo" />
+        <h1>CS4KtoCCP</h1>
+      </div>
+
+      <div id="page" style="display:none">
+        <h1>CS4000 text to CCP converter</h1>
+        <input type="file" id="choseFile" style="display:none">
+        <button id="choseFileBtn">Chose CS4000 configuration file</button>
+
+        <p id="dialogBox" style="display:none"></p>
+
+        <div id="button_container">
+          <input type="file" id="excelPathBtn" nwsaveas accept=".xlsx" style="display:none">
+          <button id="excelBtn" style="display:none">Save Loop units to Excel</button>
+
+          <input type="file" id="convertPathBtn" nwsaveas accept=".ccp" style="display:none">
+          <button id="convertBtn" style="display:none" >Convert to CCP</button>
+
+          <button id="closeBtn" style="display:none">Close converter</button>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <a id="externalLink" href="https://www.consiliumsafety.com/">Consilium Safety Group</a>
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About this app</a>
+        <p>ITAC@ConsiliumItaly</p>
+      </footer>
+
+    </div>
+
+    <div id="popup" style="display: none">
+      <div style="background: white; padding: 20px; border-radius: 8px; min-width: 300px; position: relative;">
+        <h2>CCP ConfigTool version</h2>
+        <select id="versionSelectDropdown" placeholder="Select the ConfigTool version">
+        </select>
+        <button id="versionConfirmBtn">Confirm</button>
+      </div>
+    </div>
+    
+
+    
+
+    <script src="script.js"></script>  
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const splash = document.getElementById('splash');
+        const page = document.getElementById('page');
+        
+        setTimeout(() => {
+          splash.style.display = "none";
+          page.style.display = "";
+        }, 1000); 
+      });
+
+      const shell = nw.Shell;
+
+      document.getElementById('externalLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        shell.openExternal(this.href);
+      });
+
+      const popup = document.getElementById('popup');
+      const closePopup = document.getElementById('closePopup');
+
+      convertBtn.addEventListener('click', () => {
+        popup.style.display = 'flex';  
+      });
+      
+      popup.addEventListener('click', (event) => {
+        if (event.target === popup) {
+          popup.style.display = 'none';
+        }
+      });
+      
+    </script>
+  </body>
+</html>

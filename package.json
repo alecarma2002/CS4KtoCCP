@@ -1,0 +1,20 @@
+{
+  "name": "csk4toccp",
+  "main": "src/index.html",
+  "dependencies": {
+    "tar": "^7.4.3",
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.6.2"
+  },
+  "window": {
+    "title": "CS4KtoCCP",
+    "width": 800,
+    "height": 600,
+    "resizable": false,
+    "icon":"src/img/app_icon.png"
+  },
+
+  "scripts": {
+    "start": "CS4KtoCCP.exe ."
+  }
+}
