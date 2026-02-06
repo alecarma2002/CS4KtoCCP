@@ -11,12 +11,6 @@ The application is packaged using Node Webkit (NW.js) to provide a cross-platfor
 
 ⚙️ Lightweight and portable via Node Webkit
 
-💻 CodeBase
-
-you can find the opensource code in this github repository:
-
-https://github.com/alecarma2002/CS4KtoCCP.git
-
 
 📦 Installation for Developers
 
